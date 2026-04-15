@@ -710,7 +710,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 <div align="center">
 
-**[agent-evolution](https://github.com/Ismail-2001/agent-evolution)** by [Ismail Sajid](https://github.com/Ismail-2001/)
+**[agent-evolution](https://github.com/jamarius-fortson/agent-evolution)** by [Jamarius Fortson](https://github.com/jamarius-fortson/)
 
 *Don't design your agents. Evolve them.*
 
