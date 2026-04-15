@@ -1,0 +1,42 @@
+task: "Compare LangGraph vs CrewAI for production multi-agent systems"
+
+design_space:
+  num_agents: [2, 5]
+  models:
+    - gpt-4o
+    - gpt-4o-mini
+    - claude-sonnet-4-20250514
+  patterns:
+    - pipeline
+    - supervisor
+    - debate
+  tools:
+    - [web_search]
+    - [web_search, code_exec]
+    - []
+  temperatures: [0.0, 0.7]
+
+fitness:
+  quality:
+    weight: 0.5
+    evaluator: llm_judge
+    prompt: "Rate for accuracy, depth, and actionable insights (0-10)"
+  cost:
+    weight: 0.3
+    evaluator: token_cost
+    target: minimize
+    max: 0.20
+  speed:
+    weight: 0.2
+    evaluator: latency
+    target: minimize
+    max: 30
+
+evolution:
+  population_size: 15
+  generations: 8
+  mutation_rate: 0.3
+  crossover_rate: 0.7
+  elitism: 2
+  strategy: genetic_algorithm
+  max_total_budget: 10.00
